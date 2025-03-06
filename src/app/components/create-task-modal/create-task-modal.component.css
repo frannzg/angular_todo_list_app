@@ -12,7 +12,8 @@
   }
   
   .modal {
-    background-color: white;
+    background-color: lightblue;
+    color: black;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
@@ -34,10 +35,29 @@
   
   .modal-body {
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .modal-footer {
     margin-top: 20px;
     text-align: right;
+  }
+
+  .saveBtn{
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .inputContainers {
+    width: 100%;
+  }
+
+  input{
+    width: 95%;
+    height: 1.2rem;
   }
   
