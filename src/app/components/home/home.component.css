@@ -1,3 +1,44 @@
+.tareasFinalizadas{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.tareasPendientes{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+.actionsBtn{
+    display: flex;
+    justify-content: center;
+    column-gap: 0.3rem;
+}
+
+.deleteTaskBtn{
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+}
+
+.createTaskBtn{
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+}
+
+.doneTaskBtn{
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
+
 .buttonContainer {
     display: flex;
     justify-content: center;
@@ -14,6 +55,23 @@
 }
 
 .taskContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 1.2rem;
+    margin-bottom: 2rem
+}
+
+.pendingTaskContainerDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 1.2rem;
+}
+
+.doneTaskContainerDiv{
     display: flex;
     justify-content: center;
     align-items: center;

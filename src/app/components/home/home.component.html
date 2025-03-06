@@ -2,16 +2,44 @@
     <button (click)="toggleModal()" class="createTaskBtn">Crear tarea</button>
 </div>
 
-<div *ngIf="tasks.length > 0; else loading" class="allTaskContainer">
-    <div *ngFor="let task of tasks" class="taskContainer">
-        <div>{{task.task}} - {{task.description}}</div>
-        <div>{{task.status}}</div>
-        <div><button data-id="{{task.id}}">Completar evento</button></div>
+<div class="tareasPendientes">
+    <div>
+        <h2>Tareas pendientes</h2>
+    </div>
+
+    <div *ngIf="tasksPending.length > 0; else loading" class="allTaskContainer">
+        <div *ngFor="let task of tasksPending" class="taskContainer">
+            <div *ngIf="task.status == 'Pending'" class="pendingTaskContainerDiv">
+                <div>{{task.task}} - {{task.description}}</div>
+                <div class="actionsBtn">
+                    <button class="doneTaskBtn" (click)="updateTask(task)">Done</button>
+                    <button class="deleteTaskBtn" (click)="deleteTask(task)">Delete</button>
+                </div>
+                
+            </div>
+        </div>
     </div>
 </div>
 
+<div class ="tareasFinalizadas">
+    <div>
+        <h2>Tareas finalizadas</h2>
+    </div>
+
+    <div *ngIf="tasksDone.length > 0; else loading" class="allTaskContainer">
+        <div *ngFor="let task of tasksDone" class="taskContainer">
+            <div *ngIf="task.status == 'Done'" class="doneTaskContainerDiv">
+                <div>{{task.task}} - {{task.description}}</div>
+                <div class="actionsBtn">
+                    <button class="doneTaskBtn" (click)="updateTask(task)">Undo</button>
+                    <button class="deleteTaskBtn" (click)="deleteTask(task)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <ng-template #loading>
-    <p>Cargando tareas...</p>
+    <p style="text-align: center;">No hay tareas que mostrar</p>
 </ng-template>
 
 <app-create-task-modal *ngIf="showModal" (taskCreated)="onTaskCreated($event)"></app-create-task-modal>
