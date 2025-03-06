@@ -1,0 +1,17 @@
+<div class="buttonContainer">
+    <button (click)="toggleModal()" class="createTaskBtn">Crear tarea</button>
+</div>
+
+<div *ngIf="tasks.length > 0; else loading" class="allTaskContainer">
+    <div *ngFor="let task of tasks" class="taskContainer">
+        <div>{{task.task}} - {{task.description}}</div>
+        <div>{{task.status}}</div>
+        <div><button data-id="{{task.id}}">Completar evento</button></div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <p>Cargando tareas...</p>
+</ng-template>
+
+<app-create-task-modal *ngIf="showModal" (taskCreated)="onTaskCreated($event)"></app-create-task-modal>

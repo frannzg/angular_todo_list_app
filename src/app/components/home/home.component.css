@@ -1,0 +1,22 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.allTaskContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.2rem;
+    flex-direction: column;
+}
+
+.taskContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 1.2rem;
+}

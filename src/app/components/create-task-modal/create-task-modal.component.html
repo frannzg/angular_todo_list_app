@@ -1,0 +1,20 @@
+<div class="modal-background" (click)="cancel()">
+    <div class="modal" (click)="$event.stopPropagation()"> <!-- Prevent modal background click from closing -->
+      <div class="modal-header">
+        <h2>Crear tarea</h2>
+        <button class="close-btn" (click)="cancel()">X</button>
+      </div>
+      <div class="modal-body">
+        <label for="task-name">Nombre de la tarea:</label>
+        <input id="task-name" [(ngModel)]="taskName" type="text" placeholder="Nombre de la tarea">
+  
+        <label for="task-description">Descripción:</label>
+        <input id="task-description" [(ngModel)]="taskDescription" type="text" placeholder="Descripción de la tarea">
+
+    </div>
+      <div class="modal-footer">
+        <button (click)="save()">Guardar tarea</button>
+      </div>
+    </div>
+  </div>
+  
